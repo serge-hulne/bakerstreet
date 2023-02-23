@@ -3,7 +3,8 @@
 - Simple virtual file system for embedding text files resources along with servers written in Crystal lang.
 - For use in apps develpped using Crystal lang and WebView.
 - The aim is portability of Crystal / Webview app between Linux, Mac and Windows 11.
-- * Alpha version *
+
+***Alpha version
 
 ## Installation
 
