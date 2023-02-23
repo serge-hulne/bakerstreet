@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      bakerstreet:
-       github: [your-github-user/bakerstreet](https://github.com/serge-hulne/bakerstreet)
+       github: https://github.com/serge-hulne/bakerstreet
    ```
 
 2. Run `shards install`
