@@ -11,7 +11,7 @@
    ```yaml
    dependencies:
      bakerstreet:
-       github: https://github.com/serge-hulne/bakerstreet
+       github: serge-hulne/bakerstreet
    ```
 
 2. Run `shards install`
