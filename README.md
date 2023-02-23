@@ -21,6 +21,7 @@
 ```crystal
 require "bakerstreet"
 ```
+See test_* files in ./src
 
 TODO: Write usage instructions here
 
