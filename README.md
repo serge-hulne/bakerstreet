@@ -20,6 +20,10 @@
 
 ## Usage
 
+- The code for the examples is installed in the "lib" directory of your current project.
+- In order to try the examples hereunder, you can copy the "public" directory from "./libs" to the root of your current project (along "./src")
+
+
 ```crystal
 require "bakerstreet"
 ```
