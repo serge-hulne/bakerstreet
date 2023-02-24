@@ -47,7 +47,6 @@ content = arc[bk.to_path("index.html")]
 puts "file = #{content}"
 
 ```
-
 ## Example 3 of use : Using the embedded archive from example 1 in a server
 
 ```
@@ -58,24 +57,11 @@ require "../archive.cr"
 HOST = "127.0.0.1"
 PORT = 8080
 
-# URL to archive path mapping
-def get_file_from_url?(url : String, bk, arc) : String
-  if url == "/" || url == ""
-    url = "/index.html"
-  end
-  begin
-    content = arc[bk.to_path(url)]
-    return content
-  rescue exception
-    return "File not found: #{bk.to_path(url)}"
-  end
-end
-
 # Server using URL to archive path mapping
 server = HTTP::Server.new do |context|
   bk = Baker.new("public")
   arc = get_archive()
-  context.response.print get_file_from_url?(context.request.path, bk, arc)
+  context.response.print bk.get_file_from_url?(context.request.path, bk, arc)
 end
 
 # Running server
