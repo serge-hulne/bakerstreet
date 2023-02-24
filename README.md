@@ -25,7 +25,30 @@ require "bakerstreet"
 ```
 See test_* files in ./src
 
-## Example 2 of use
+
+## Example 1 of use : Creating an embedded archive
+```
+require "bakerstreet"
+
+ 
+bk = Baker.new("public")
+bk.make_archive()
+```
+
+## Example 2 of use : Using the embedded archive from example 1
+```
+require "../archive.cr"
+require "bakerstreet"
+
+bk = Baker.new("public")
+arc = get_archive()
+
+content = arc[bk.to_path("index.html")]
+puts "file = #{content}"
+
+```
+
+## Example 3 of use : Using the embedded archive from example 1 in a server
 
 ```
 require "http/server"
