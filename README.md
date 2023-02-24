@@ -25,11 +25,11 @@ require "bakerstreet"
 ```
 See test_* files in ./src
 
-## Example of use
+## Example 2 of use
 
 ```
 require "http/server"
-require "./bakerstreet"
+require "bakerstreet"
 require "../archive.cr"
 
 HOST = "127.0.0.1"
