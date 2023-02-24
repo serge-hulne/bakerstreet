@@ -4,29 +4,34 @@ require "../archive.cr"
 
 HOST = "127.0.0.1"
 PORT = 8080
-
-# URL to archive path mapping
-def get_file_from_url?(url : String, bk, arc) : String
-  if url == "/" || url == ""
-    url = "/index.html"
-  end
-  begin
-    content = arc[bk.to_path(url)]
-    return content
-  rescue exception
-    return "File not found: #{bk.to_path(url)}"
-  end
-end
+DEBUG = true
 
 # Server using URL to archive path mapping
+bk = Baker.new("myapp/dist")
+arc = get_archive()
+
 server = HTTP::Server.new do |context|
-  bk = Baker.new("public")
-  arc = get_archive()
-  context.response.print get_file_from_url?(context.request.path, bk, arc)
+  # Mime type according to file type
+  if context.request.path.ends_with?(".html")
+    context.response.content_type = "text/html"
+  elsif context.request.path.ends_with?(".css")
+    context.response.content_type = "text/css"
+  elsif context.request.path.ends_with?(".svg")
+    context.response.content_type = "image/svg+xml"
+  elsif context.request.path.ends_with?(".js")
+    context.response.content_type = "text/javascript"
+  end
+  # Server response
+  context.response.print bk.get_file_from_url?(context.request.path, bk, arc)
+  if DEBUG
+    puts "accessed : #{context.request.path}"
+  end
+
 end
 
 # Running server
-puts "Listening on http://#{HOST}:#{PORT}"
+if DEBUG
+  puts "Listening on http://#{HOST}:#{PORT}"
+end
 server.bind_tcp HOST, PORT
 server.listen
-
