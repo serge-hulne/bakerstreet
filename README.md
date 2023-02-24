@@ -83,7 +83,6 @@ server = HTTP::Server.new do |context|
   if DEBUG
     puts "accessed : #{context.request.path}"
   end
-
 end
 
 # Running server
