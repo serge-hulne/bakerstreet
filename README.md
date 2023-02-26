@@ -56,7 +56,7 @@ puts "file = #{content}"
 
 ```
 require "http/server"
-require "./bakerstreet"
+require "bakerstreet"
 require "../archive.cr"
 
 HOST = "127.0.0.1"
