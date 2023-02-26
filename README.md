@@ -55,7 +55,7 @@ puts "file = #{content}"
 ## Example 3 of use : Using the embedded archive from example 1 in a server
 
 ```
-require "./bakerstreet_server"
+require "bakerstreet_server"
 
 BakerStreetServer.serve(host="127.0.01", port=8080, debug=true)
 ```
