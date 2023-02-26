@@ -1,6 +1,6 @@
 # bakerstreet
 
-- Simple virtual file system for embedding text files resources along with servers written in Crystal lang.
+- Simple virtual file system and associated http server for embedding text files resources along with servers written in Crystal lang.
 - In particular, supports : html, css, js and svg files.
 - Does not support image files or binary files : jpeg, png, etc.
 - For use in apps develpped using Crystal lang and WebView.
