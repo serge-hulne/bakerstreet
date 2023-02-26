@@ -1,5 +1,5 @@
 require "./bakerstreet"
 
  
-bk = Baker.new("public")
+bk = Baker.new("myapp/dist")
 bk.make_archive()
