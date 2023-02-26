@@ -15,4 +15,6 @@ targets:
     main: src/test_use.cr
   test_server:
     main: src/test_server.cr
+  test_server_1:
+    main: src/test_server_1.cr
   

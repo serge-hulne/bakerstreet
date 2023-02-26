@@ -4,7 +4,8 @@ require "dir"
 # TODO replace \n by a portable (OS dependent) newline symbol
 # TODO Test on Windows.
 
-class Baker
+class BakerStreetArchive
+  
   def initialize(root : String)
     @root = root
     @root_path = Path.new(@root)

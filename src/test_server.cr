@@ -7,7 +7,7 @@ PORT = 8080
 DEBUG = true
 
 # Server using URL to archive path mapping
-bk = Baker.new("myapp/dist")
+bk = BakerStreetArchive.new("myapp/dist")
 arc = get_archive()
 
 server = HTTP::Server.new do |context|
@@ -26,7 +26,6 @@ server = HTTP::Server.new do |context|
   if DEBUG
     puts "accessed : #{context.request.path}"
   end
-
 end
 
 # Running server
