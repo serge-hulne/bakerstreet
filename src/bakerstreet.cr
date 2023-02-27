@@ -4,8 +4,8 @@ require "dir"
 # TODO replace \n by a portable (OS dependent) newline symbol
 # TODO Test on Windows.
 
+# class BakerStreetArchive
 class BakerStreetArchive
-  
   def initialize(root : String)
     @root = root
     @root_path = Path.new(@root)
@@ -60,9 +60,9 @@ class BakerStreetArchive
     end"
     File.write(@arc, method_litteral)
   end # def make_archive
-
 end # class
 
+# class BakerStreetServer
 class BakerStreetServer
     def BakerStreetServer.serve(host : String, port : Int32, debug : Bool)
         # Server using URL to archive path mapping
